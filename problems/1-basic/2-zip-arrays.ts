@@ -11,8 +11,8 @@ function zipArrays(a: any, b: any): any {
   return result;
 }
 
-const c = zipArrays([1, 2, 3], ["a", "b"]);
-// значення c → [[1, "a"], [2, "b"]]
+const a = zipArrays([1, 2, 3], ["a", "b"]);
+// значення a → [[1, "a"], [2, "b"]]
 
-const d = zipArrays([true, false], [10, 20]);
-// значення d → [[true, 10], [false, 20]]
+const b = zipArrays([true, false], [10, 20]);
+// значення b → [[true, 10], [false, 20]]
