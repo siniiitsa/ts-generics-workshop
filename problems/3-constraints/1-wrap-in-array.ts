@@ -1,6 +1,6 @@
 /*
-  `Функція приймає значення типу string або number і загортає його в масив.
-  Замініть `any` на generic з extends-обмеженням.
+  Функція приймає значення типу `string | number` і загортає його в масив.
+  Замініть `any` на generic з extends обмеженням.
 `*/
 
 function wrapInArray(value: any): any[] {
