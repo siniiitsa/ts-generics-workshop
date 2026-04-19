@@ -10,7 +10,7 @@ function getElement<T>(selector: string): T | null {
   return document.querySelector(selector) as T | null;
 }
 
-const div = getElement("div");
+const div = getElement<number>("div");
 
 /*
   Тепер, при спробі використати несумісний тип, компілятор видасть нам попередження.
