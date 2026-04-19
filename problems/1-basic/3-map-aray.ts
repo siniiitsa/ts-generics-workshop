@@ -1,5 +1,7 @@
-// Функція приймає масив елементів та колбек, який перетворює кожен елемент в інший тип.
-// Повертає новий масив перетворених елементів.
+/*
+  Функція приймає масив елементів та колбек, який перетворює кожен елемент в інший тип.
+  Повертає новий масив перетворених елементів.
+*/
 
 function mapArray(list: any, cb: any): any[] {
   return list.map(cb);
@@ -8,5 +10,5 @@ function mapArray(list: any, cb: any): any[] {
 const nums = mapArray(["1", "2", "3"], Number);
 // тип nums → number[]
 
-const lengths = mapArray(["hello", "world"], (word) => word.length);
-// тип lengths → number[]
+const lens = mapArray(["hello", "world"], (word) => word.length);
+// тип lens → number[]
