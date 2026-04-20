@@ -13,10 +13,16 @@ function getValue(pair: KeyValuePair): any {
 }
 
 const p1: KeyValuePair = { key: "name", value: "Alice" };
-// очікуваний тип p1 → KeyValuePair<string, string>
-
 const p2: KeyValuePair = { key: 1, value: true };
-// очікуваний тип p2 → KeyValuePair<number, boolean>
+const v1 = getValue(p1);
+const v2 = getValue(p2);
 
-const v1 = getValue(p1); // очікуваний тип → string
-const v2 = getValue(p2); // очікуваний тип → boolean
+/* Test Cases */
+import type { Equal, Expect } from "@type-challenges/utils";
+
+type cases = [
+  Expect<Equal<typeof p1, KeyValuePair<string, string>>>,
+  Expect<Equal<typeof p2, KeyValuePair<number, boolean>>>,
+  Expect<Equal<typeof v1, string>>,
+  Expect<Equal<typeof v2, boolean>>,
+];

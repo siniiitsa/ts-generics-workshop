@@ -14,7 +14,12 @@ function zipArrays(a: any, b: any): any {
 }
 
 const a = zipArrays([1, 2, 3], ["a", "b"]);
-// значення a → [[1, "a"], [2, "b"]]
-
 const b = zipArrays([true, false], [10, 20]);
-// значення b → [[true, 10], [false, 20]]
+
+/* Test Cases */
+import type { Equal, Expect } from "@type-challenges/utils";
+
+type cases = [
+  Expect<Equal<typeof a, [number, string][]>>,
+  Expect<Equal<typeof b, [boolean, number][]>>,
+];

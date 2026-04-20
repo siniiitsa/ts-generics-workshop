@@ -14,6 +14,16 @@ const users = [
   { name: "Bob", age: 20 },
 ];
 
-const byAge = sortBy(users, "age"); // OK
-const byName = sortBy(users, "name"); // OK
-sortBy(users, "missing"); // має бути помилка TypeScript
+const byAge = sortBy(users, "age");
+const byName = sortBy(users, "name");
+
+/* Test Cases */
+import type { Equal, Expect } from "@type-challenges/utils";
+
+type cases = [
+  Expect<Equal<typeof byAge, typeof users>>,
+  Expect<Equal<typeof byName, typeof users>>,
+];
+
+// @ts-expect-error
+sortBy(users, "missing");

@@ -14,18 +14,26 @@ const userResponse: ApiResponse = {
   status: 200,
   ok: true,
 };
-// очікуваний тип userResponse → ApiResponse<{ id: number; name: string }>
 
 const numbersResponse: ApiResponse = {
   data: [1, 2, 3],
   status: 200,
   ok: true,
 };
-// очікуваний тип numbersResponse → ApiResponse<number[]>
 
 const errorResponse: ApiResponse = {
   data: null,
   status: 404,
   ok: false,
 };
-// очікуваний тип errorResponse → ApiResponse<null>
+
+/* Test Cases */
+import type { Equal, Expect } from "@type-challenges/utils";
+
+type cases = [
+  Expect<
+    Equal<typeof userResponse, ApiResponse<{ id: number; name: string }>>
+  >,
+  Expect<Equal<typeof numbersResponse, ApiResponse<number[]>>>,
+  Expect<Equal<typeof errorResponse, ApiResponse<null>>>,
+];

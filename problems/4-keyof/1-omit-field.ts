@@ -11,5 +11,12 @@ function omitField(obj: any, key: any): any {
 
 const user = { id: 1, name: "Alice", age: 30 };
 
-const withoutAge = omitField(user, "age"); // очікуваний тип → { id: number; name: string }
-// omitField(user, "missing");               // має бути помилка TypeScript
+const withoutAge = omitField(user, "age");
+
+/* Test Cases */
+import type { Equal, Expect } from "@type-challenges/utils";
+
+type cases = [Expect<Equal<typeof withoutAge, { id: number; name: string }>>];
+
+// @ts-expect-error
+omitField(user, "missing");

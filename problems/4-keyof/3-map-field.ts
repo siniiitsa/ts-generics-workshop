@@ -11,7 +11,18 @@ function mapField(obj: any, key: any, fn: any): any {
 
 const user = { name: "Alice", age: 30 };
 
-const uppercased = mapField(user, "name", (s: string) => s.toUpperCase()); // OK
-const incremented = mapField(user, "age", (n: number) => n + 1); // OK
-mapField(user, "age", (n: number) => String(n)); // має бути помилка TypeScript — fn повертає string замість number
-mapField(user, "missing", (x: any) => x); // має бути помилка TypeScript
+const uppercased = mapField(user, "name", (s: string) => s.toUpperCase());
+const incremented = mapField(user, "age", (n: number) => n + 1);
+
+/* Test Cases */
+import type { Equal, Expect } from "@type-challenges/utils";
+
+type cases = [
+  Expect<Equal<typeof uppercased, { name: string; age: number }>>,
+  Expect<Equal<typeof incremented, { name: string; age: number }>>,
+];
+
+// @ts-expect-error
+mapField(user, "age", (n: number) => String(n));
+// @ts-expect-error
+mapField(user, "missing", (x) => x);
