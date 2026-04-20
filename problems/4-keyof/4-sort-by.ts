@@ -1,0 +1,19 @@
+/*
+  Функція приймає масив об'єктів і ключ, та повертає масив,
+  відсортований за значенням цього ключа.
+  Замініть `any` на generic-параметри з keyof обмеженням.
+*/
+
+function sortBy(arr: any[], key: any): any[] {
+  return [...arr].sort((a, b) => (a[key] > b[key] ? 1 : -1));
+}
+
+const users = [
+  { name: "Charlie", age: 25 },
+  { name: "Alice", age: 30 },
+  { name: "Bob", age: 20 },
+];
+
+const byAge = sortBy(users, "age"); // OK
+const byName = sortBy(users, "name"); // OK
+sortBy(users, "missing"); // має бути помилка TypeScript
