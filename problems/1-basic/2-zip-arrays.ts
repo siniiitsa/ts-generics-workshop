@@ -8,7 +8,8 @@ function zipArrays(a: any, b: any): any {
   const len = Math.min(a.length, b.length);
   const result = [];
   for (let i = 0; i < len; i++) {
-    result.push([a[i], b[i]]);
+    const item = [a[i], b[i]];
+    result.push(item);
   }
   return result;
 }

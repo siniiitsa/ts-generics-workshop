@@ -31,9 +31,7 @@ const errorResponse: ApiResponse = {
 import type { Equal, Expect } from "@type-challenges/utils";
 
 type cases = [
-  Expect<
-    Equal<typeof userResponse, ApiResponse<{ id: number; name: string }>>
-  >,
+  Expect<Equal<typeof userResponse, ApiResponse<{ id: number; name: string }>>>,
   Expect<Equal<typeof numbersResponse, ApiResponse<number[]>>>,
   Expect<Equal<typeof errorResponse, ApiResponse<null>>>,
 ];

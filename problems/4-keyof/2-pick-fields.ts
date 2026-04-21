@@ -4,7 +4,7 @@
   Замініть `any` на generic-параметри з keyof обмеженням.
 */
 
-function pickFields(obj: any, keys: any[]): any {
+function pickFields(obj: any, keys: any): any {
   const result: any = {};
   for (const key of keys) {
     result[key] = obj[key];

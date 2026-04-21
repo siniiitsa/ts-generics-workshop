@@ -4,8 +4,10 @@
   Замініть `any` на generic-параметри з keyof обмеженням.
 */
 
-function sortBy(arr: any[], key: any): any[] {
-  return [...arr].sort((a, b) => (a[key] > b[key] ? 1 : -1));
+function sortBy(arr: any, key: any): any {
+  return [...arr].sort((a, b) =>
+    a[key] > b[key] ? 1 : a[key] < b[key] ? -1 : 0,
+  );
 }
 
 const users = [

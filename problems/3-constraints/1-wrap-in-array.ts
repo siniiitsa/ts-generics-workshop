@@ -3,7 +3,7 @@
   Замініть `any` на generic з extends обмеженням.
 */
 
-function wrapInArray(value: any): any[] {
+function wrapInArray(value: any): any {
   return [value];
 }
 
@@ -14,8 +14,8 @@ const numArr = wrapInArray(42);
 import type { Equal, Expect } from "@type-challenges/utils";
 
 type cases = [
-  Expect<Equal<typeof strArr, string[]>>,
-  Expect<Equal<typeof numArr, number[]>>,
+  Expect<Equal<typeof strArr, [string]>>,
+  Expect<Equal<typeof numArr, [number]>>,
 ];
 
 // @ts-expect-error

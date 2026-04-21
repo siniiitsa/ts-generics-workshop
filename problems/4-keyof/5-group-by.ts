@@ -6,7 +6,7 @@
 
 function groupBy(arr: any[], key: any): any {
   return arr.reduce((groups, item) => {
-    const groupKey = item[key];
+    const groupKey = String(item[key]);
     return { ...groups, [groupKey]: [...(groups[groupKey] ?? []), item] };
   }, {});
 }

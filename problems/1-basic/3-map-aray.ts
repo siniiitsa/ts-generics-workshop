@@ -3,13 +3,13 @@
   Повертає новий масив перетворених елементів.
 */
 
-function mapArray(list: any, cb: any): any[] {
+function mapArray(list: any, cb: any): any {
   return list.map(cb);
 }
 
 const nums = mapArray(["1", "2", "3"], Number);
-const lens = mapArray(["hello", "world"], (word: any) => word.length);
-const flags = mapArray([1, 2, 3], (value: any) => value > 1);
+const lens = mapArray(["hello", "world"], (word) => word.length);
+const flags = mapArray([1, 2, 3], (value) => value > 1);
 
 /* Test Cases */
 import type { Equal, Expect } from "@type-challenges/utils";
