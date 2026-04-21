@@ -8,7 +8,14 @@ function mapArray(list: any, cb: any): any[] {
 }
 
 const nums = mapArray(["1", "2", "3"], Number);
-// тип nums → number[]
+const lens = mapArray(["hello", "world"], (word: any) => word.length);
+const flags = mapArray([1, 2, 3], (value: any) => value > 1);
 
-const lens = mapArray(["hello", "world"], (word) => word.length);
-// тип lens → number[]
+/* Test Cases */
+import type { Equal, Expect } from "@type-challenges/utils";
+
+type cases = [
+  Expect<Equal<typeof nums, number[]>>,
+  Expect<Equal<typeof lens, number[]>>,
+  Expect<Equal<typeof flags, boolean[]>>,
+];

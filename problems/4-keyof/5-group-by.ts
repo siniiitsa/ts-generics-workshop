@@ -17,5 +17,14 @@ const orders = [
   { id: 3, status: "pending", amount: 150 },
 ];
 
-const byStatus = groupBy(orders, "status"); // OK
-groupBy(orders, "missing"); // має бути помилка TypeScript
+const byStatus = groupBy(orders, "status");
+
+/* Test Cases */
+import type { Equal, Expect } from "@type-challenges/utils";
+
+type cases = [
+  Expect<Equal<typeof byStatus, Record<string, (typeof orders)[number][]>>>,
+];
+
+// @ts-expect-error
+groupBy(orders, "missing");

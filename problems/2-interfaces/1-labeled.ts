@@ -13,10 +13,16 @@ function getItem(labeled: Labeled): any {
 }
 
 const numLabeled: Labeled = { label: "age", item: 30 };
-// очікуваний тип numLabeled → Labeled<number>
-
 const boolLabeled: Labeled = { label: "active", item: true };
-// очікуваний тип boolLabeled → Labeled<boolean>
+const numb = getItem(numLabeled);
+const bool = getItem(boolLabeled);
 
-const numb = getItem(numLabeled); // очікуваний тип → number
-const bool = getItem(boolLabeled); // очікуваний тип → boolean
+/* Test Cases */
+import type { Equal, Expect } from "@type-challenges/utils";
+
+type cases = [
+  Expect<Equal<typeof numLabeled, Labeled<number>>>,
+  Expect<Equal<typeof boolLabeled, Labeled<boolean>>>,
+  Expect<Equal<typeof numb, number>>,
+  Expect<Equal<typeof bool, boolean>>,
+];
