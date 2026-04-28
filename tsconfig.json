@@ -2,5 +2,6 @@
   "compilerOptions": {
     "moduleDetection": "force",
     "lib": ["ES2015", "DOM"],
+    "noUnusedLocals": false,
   },
 }
