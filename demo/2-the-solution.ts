@@ -30,12 +30,14 @@ function repeat(item: any, times: number): any {
 }
 
 const letters = repeat("a", 3);
+const numbers = repeat(4, 5);
 
 function concat(a: any, b: any): any {
   return [...a, ...b];
 }
 
 const nums = concat([1, 2], [2, 4]);
+const mixed = concat([1, "a"], [2, "b"]);
 
 /*
   Ментальна модель наступна:

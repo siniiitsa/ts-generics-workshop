@@ -21,11 +21,7 @@ const div = getElement<number>("div");
   Розглянемо ще один приклад:
 */
 
-interface Lengthy {
-  length: number;
-}
-
-function getLen<T extends Lengthy>(item: T): number {
+function getLen(item: any): number {
   return item.length;
 }
 
