@@ -12,6 +12,7 @@ function omitField(obj: any, key: any): any {
 const user = { id: 1, name: "Alice", age: 30 };
 
 const withoutAge = omitField(user, "age");
+// => { id: 1, name: "Alice" }
 
 /* Test Cases */
 import type { Equal, Expect } from "@type-challenges/utils";

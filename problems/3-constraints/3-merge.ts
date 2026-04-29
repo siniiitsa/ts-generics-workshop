@@ -8,8 +8,10 @@ function merge(a: any, b: any): any {
 }
 
 const result = merge({ name: "Alice" }, { age: 30 });
+// => { name: "Alice", age: 30 }
 
 const config = merge({ debug: true }, { timeout: 5000, retries: 3 });
+// => { debug: true, timeout: 5000, retries: 3 }
 
 /* Test Cases */
 import type { Equal, Expect } from "@type-challenges/utils";

@@ -15,7 +15,9 @@ function zipArrays(a: any, b: any): any {
 }
 
 const a = zipArrays([1, 2, 3], ["a", "b"]);
+// => [[1, "a"], [2, "b"]]
 const b = zipArrays([true, false], [10, 20]);
+// => [[true, 10], [false, 20]]
 
 /* Test Cases */
 import type { Equal, Expect } from "@type-challenges/utils";

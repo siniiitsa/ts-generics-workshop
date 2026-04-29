@@ -7,7 +7,9 @@ function makePair(a: any, b: any): any {
 }
 
 const a = makePair(1, "hello");
+// => [1, "hello"]
 const b = makePair(true, 42);
+// => [true, 42]
 
 /* Test Cases */
 import type { Equal, Expect } from "@type-challenges/utils";

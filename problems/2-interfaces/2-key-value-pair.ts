@@ -15,7 +15,9 @@ function getValue(pair: KeyValuePair): any {
 const p1: KeyValuePair = { key: "name", value: "Alice" };
 const p2: KeyValuePair = { key: 1, value: true };
 const v1 = getValue(p1);
+// => "Alice"
 const v2 = getValue(p2);
+// => true
 
 /* Test Cases */
 import type { Equal, Expect } from "@type-challenges/utils";

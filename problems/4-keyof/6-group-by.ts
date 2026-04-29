@@ -18,6 +18,10 @@ const orders = [
 ];
 
 const byStatus = groupBy(orders, "status");
+// => {
+//      pending: [{ id: 1, status: "pending", amount: 100 }, { id: 3, status: "pending", amount: 150 }],
+//      shipped: [{ id: 2, status: "shipped", amount: 200 }],
+//    }
 
 /* Test Cases */
 import type { Equal, Expect } from "@type-challenges/utils";

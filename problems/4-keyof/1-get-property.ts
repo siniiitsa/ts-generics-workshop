@@ -10,7 +10,9 @@ function getProperty(obj: any, key: any): any {
 const user = { name: "Alice", age: 30 };
 
 const userName = getProperty(user, "name");
+// => "Alice"
 const userAge = getProperty(user, "age");
+// => 30
 
 /* Test Cases */
 import type { Equal, Expect } from "@type-challenges/utils";

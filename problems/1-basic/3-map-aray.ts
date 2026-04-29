@@ -8,8 +8,11 @@ function mapArray(list: any, cb: any): any {
 }
 
 const nums = mapArray(["1", "2", "3"], Number);
+// => [1, 2, 3]
 const lens = mapArray(["hello", "world"], (word) => word.length);
+// => [5, 5]
 const flags = mapArray([1, 2, 3], (value) => value > 1);
+// => [false, true, true]
 
 /* Test Cases */
 import type { Equal, Expect } from "@type-challenges/utils";

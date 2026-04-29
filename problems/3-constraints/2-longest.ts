@@ -8,7 +8,9 @@ function longest(a: any, b: any): any {
 }
 
 const longerArray = longest([1, 2, 3], [1, 2]);
+// => [1, 2, 3]
 const longerString = longest("typescript", "js");
+// => "typescript"
 
 /* Test Cases */
 import type { Equal, Expect } from "@type-challenges/utils";

@@ -15,6 +15,7 @@ function pickFields(obj: any, keys: any): any {
 const user = { id: 1, name: "Alice", email: "alice@example.com", age: 30 };
 
 const preview = pickFields(user, ["id", "name"]);
+// => { id: 1, name: "Alice" }
 
 /* Test Cases */
 import type { Equal, Expect } from "@type-challenges/utils";

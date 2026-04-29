@@ -12,7 +12,9 @@ function mapField(obj: any, key: any, fn: any): any {
 const user = { name: "Alice", age: 30 };
 
 const uppercased = mapField(user, "name", (s: string) => s.toUpperCase());
+// => { name: "ALICE", age: 30 }
 const incremented = mapField(user, "age", (n: number) => n + 1);
+// => { name: "Alice", age: 31 }
 
 /* Test Cases */
 import type { Equal, Expect } from "@type-challenges/utils";

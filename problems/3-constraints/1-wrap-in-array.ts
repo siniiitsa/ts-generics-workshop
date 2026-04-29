@@ -8,7 +8,9 @@ function wrapInArray(value: any): any {
 }
 
 const strArr = wrapInArray("hello");
+// => ["hello"]
 const numArr = wrapInArray(42);
+// => [42]
 
 /* Test Cases */
 import type { Equal, Expect } from "@type-challenges/utils";

@@ -15,7 +15,9 @@ function getItem(labeled: Labeled): any {
 const numLabeled: Labeled = { label: "age", item: 30 };
 const boolLabeled: Labeled = { label: "active", item: true };
 const numb = getItem(numLabeled);
+// => 30
 const bool = getItem(boolLabeled);
+// => true
 
 /* Test Cases */
 import type { Equal, Expect } from "@type-challenges/utils";
