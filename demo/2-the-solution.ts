@@ -29,9 +29,13 @@ function repeat(item: any, times: number): any {
   return Array(times).fill(item);
 }
 
+const letters = repeat("a", 3);
+
 function concat(a: any, b: any): any {
   return [...a, ...b];
 }
+
+const nums = concat([1, 2], [2, 4]);
 
 /*
   Ментальна модель наступна:

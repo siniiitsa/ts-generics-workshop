@@ -17,7 +17,7 @@ const user = { id: 1, name: "Alice", active: true };
 
 const name = getValue(user, "name"); // string
 const id = getValue(user, "id"); // number
-getValue(user, "missing"); // Помилка — ключ не існує в типі
+const missing = getValue(user, "missing"); // Помилка — ключ не існує в типі
 
 /*
   T[K] — це індексований тип доступу. Він означає:

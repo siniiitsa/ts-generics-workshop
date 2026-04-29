@@ -4,22 +4,22 @@
   зберігаючи при цьому типову безпеку.
 */
 
-interface Box<T> {
-  value: T;
+interface Box {
+  value: any;
 }
 
-const numberBox: Box<number> = { value: 42 };
-const stringBox: Box<string> = { value: "hello" };
+const numberBox: Box = { value: 42 };
+const stringBox: Box = { value: "hello" };
 
 /*
   Параметрів типу може бути декілька.
   Наприклад, інтерфейс для пари значень:
 */
 
-interface Pair<A, B> {
-  first: A;
-  second: B;
+interface Pair {
+  first: any;
+  second: any;
 }
 
-const point: Pair<number, number> = { first: 10, second: 20 };
-const entry: Pair<string, boolean> = { first: "active", second: true };
+const point: Pair = { first: 10, second: 20 };
+const entry: Pair = { first: "active", second: true };
