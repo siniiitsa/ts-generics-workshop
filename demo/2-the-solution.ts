@@ -37,7 +37,7 @@ function concat(a: any, b: any): any {
 }
 
 const nums = concat([1, 2], [2, 4]);
-const mixed = concat([1, "a"], [2, "b"]);
+const mixed = concat([1, 2], ["a", "b"]);
 
 /*
   Ментальна модель наступна:
