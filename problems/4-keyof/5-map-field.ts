@@ -5,7 +5,11 @@
   щоб тип аргументу і результату трансформера відповідали типу поля.
 */
 
-function mapField(obj: any, key: any, fn: any): any {
+function mapField<T extends object, K extends keyof T>(
+  obj: T,
+  key: K,
+  fn: (value: T[K]) => T[K],
+): T {
   return { ...obj, [key]: fn(obj[key]) };
 }
 

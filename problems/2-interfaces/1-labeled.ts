@@ -3,17 +3,17 @@
   Замініть `any` на generic-параметр у інтерфейсі та функції.
 */
 
-interface Labeled {
+interface Labeled<T> {
   label: string;
-  item: any;
+  item: T;
 }
 
-function getItem(labeled: Labeled): any {
+function getItem<T>(labeled: Labeled<T>): T {
   return labeled.item;
 }
 
-const numLabeled: Labeled = { label: "age", item: 30 };
-const boolLabeled: Labeled = { label: "active", item: true };
+const numLabeled: Labeled<number> = { label: "age", item: 30 };
+const boolLabeled: Labeled<boolean> = { label: "active", item: true };
 const numb = getItem(numLabeled);
 // => 30
 const bool = getItem(boolLabeled);

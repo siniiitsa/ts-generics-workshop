@@ -2,7 +2,7 @@
   Функція приймає два аргументи(можливо, різних типів) і повертає їх як кортеж.
 */
 
-function makePair(a: any, b: any): any {
+function makePair<T, U>(a: T, b: U): [T, U] {
   return [a, b];
 }
 

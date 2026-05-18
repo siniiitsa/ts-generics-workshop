@@ -4,7 +4,7 @@
   щоб повернений тип точно відображав відсутність видаленого поля.
 */
 
-function omitField(obj: any, key: any): any {
+function omitField<T extends object, K extends keyof T>(obj: T, key: K): Omit<T, K> {
   const { [key]: _, ...rest } = obj;
   return rest;
 }
