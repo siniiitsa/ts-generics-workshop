@@ -3,8 +3,14 @@
   Замініть `any` на generic з extends обмеженням.
 */
 
-function wrapInArray(value: any): any {
-  return [value];
+type WidenStringOrNumber<T extends string | number> = T extends string
+  ? string
+  : number;
+
+function wrapInArray<T extends string | number>(
+  value: T,
+): [WidenStringOrNumber<T>] {
+  return [value] as [WidenStringOrNumber<T>];
 }
 
 const strArr = wrapInArray("hello");

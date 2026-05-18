@@ -4,8 +4,11 @@
   Замініть `any` на generic-параметри з keyof обмеженням.
 */
 
-function groupBy(arr: any[], key: any): any {
-  return arr.reduce((groups, item) => {
+function groupBy<T extends object, K extends keyof T>(
+  arr: T[],
+  key: K,
+): Record<string, T[]> {
+  return arr.reduce<Record<string, T[]>>((groups, item) => {
     const groupKey = String(item[key]);
     return { ...groups, [groupKey]: [...(groups[groupKey] ?? []), item] };
   }, {});

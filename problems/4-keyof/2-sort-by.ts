@@ -4,7 +4,7 @@
   Замініть `any` на generic-параметри з keyof обмеженням.
 */
 
-function sortBy(arr: any, key: any): any {
+function sortBy<T, K extends keyof T>(arr: T[], key: K): T[] {
   return [...arr].sort((a, b) =>
     a[key] > b[key] ? 1 : a[key] < b[key] ? -1 : 0,
   );

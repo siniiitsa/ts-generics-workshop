@@ -3,17 +3,17 @@
   Замініть `any` на два generic-параметри у інтерфейсі та функції.
 */
 
-interface KeyValuePair {
-  key: any;
-  value: any;
+interface KeyValuePair<K, V> {
+  key: K;
+  value: V;
 }
 
-function getValue(pair: KeyValuePair): any {
+function getValue<K, V>(pair: KeyValuePair<K, V>): V {
   return pair.value;
 }
 
-const p1: KeyValuePair = { key: "name", value: "Alice" };
-const p2: KeyValuePair = { key: 1, value: true };
+const p1: KeyValuePair<string, string> = { key: "name", value: "Alice" };
+const p2: KeyValuePair<number, boolean> = { key: 1, value: true };
 const v1 = getValue(p1);
 // => "Alice"
 const v2 = getValue(p2);

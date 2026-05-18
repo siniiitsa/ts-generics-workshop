@@ -4,11 +4,11 @@
   Довжина результату — по коротшому масиву.
 */
 
-function zipArrays(a: any, b: any): any {
+function zipArrays<T, U>(a: T[], b: U[]): [T, U][] {
   const len = Math.min(a.length, b.length);
-  const result = [];
+  const result: [T, U][] = [];
   for (let i = 0; i < len; i++) {
-    const item = [a[i], b[i]];
+    const item: [T, U] = [a[i], b[i]];
     result.push(item);
   }
   return result;

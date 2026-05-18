@@ -3,7 +3,7 @@
   Замініть `any` на два generic-параметри з extends-обмеженнями.
 */
 
-function merge(a: any, b: any): any {
+function merge<T extends object, U extends object>(a: T, b: U): T & U {
   return { ...a, ...b };
 }
 

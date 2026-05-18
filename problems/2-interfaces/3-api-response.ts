@@ -3,25 +3,25 @@
   Замініть `any` на generic-параметр.
 */
 
-interface ApiResponse {
-  data: any;
+interface ApiResponse<T> {
+  data: T;
   status: number;
   ok: boolean;
 }
 
-const userResponse: ApiResponse = {
+const userResponse: ApiResponse<{ id: number; name: string }> = {
   data: { id: 1, name: "Alice" },
   status: 200,
   ok: true,
 };
 
-const numbersResponse: ApiResponse = {
+const numbersResponse: ApiResponse<number[]> = {
   data: [1, 2, 3],
   status: 200,
   ok: true,
 };
 
-const errorResponse: ApiResponse = {
+const errorResponse: ApiResponse<null> = {
   data: null,
   status: 404,
   ok: false,

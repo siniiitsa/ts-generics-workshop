@@ -3,8 +3,10 @@
   що є довшим. Замініть `any` на generic-параметр з extends-обмеженням.
 */
 
-function longest(a: any, b: any): any {
-  return a.length >= b.length ? a : b;
+type WidenString<T> = T extends string ? string : T;
+
+function longest<T extends { length: number }>(a: T, b: T): WidenString<T> {
+  return (a.length >= b.length ? a : b) as WidenString<T>;
 }
 
 const longerArray = longest([1, 2, 3], [1, 2]);

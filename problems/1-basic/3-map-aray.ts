@@ -3,7 +3,7 @@
   Повертає новий масив перетворених елементів.
 */
 
-function mapArray(list: any, cb: any): any {
+function mapArray<T, U>(list: T[], cb: (item: T) => U): U[] {
   return list.map(cb);
 }
 
